@@ -1,9 +1,11 @@
-import { RootState } from '../../../app/store/store';
-import { Button } from '../../../shared';
-import { useAppDispatch, useAppSelector } from '../../../shared/hooks/redux-hook/ReduxHook';
-import { ListPlayersContainer, ListPlayersItems } from '../../../shared/ui/StyledListPlayer/StyledLIstPlayer';
-import { Title } from '../../../shared/ui/Title/Title';
-import { removePlayerList } from '../../AddPlayer/store/AddPlayer';
+import { RootState } from '#app/store/store.ts';
+import { removePlayerList } from '#featers/AddPlayer/store/AddPlayer.ts';
+import { useAppDispatch, useAppSelector } from '#shared/hooks/redux-hook/ReduxHook.ts';
+import { Button } from '#shared/index.ts';
+import { ListPlayersContainer, ListPlayersItems } from '#shared/ui/StyledListPlayer/StyledLIstPlayer.tsx';
+import { Notification } from '#shared/ui/StyledNotification/StyledNotification.tsx';
+import { Title } from '#shared/ui/Title/Title.tsx';
+
 
 export const ListPlayers = () => {
   const players = useAppSelector((state: RootState) => state.addPlayer.players);
@@ -11,7 +13,7 @@ export const ListPlayers = () => {
   return (
     <>
       <ListPlayersContainer>
-        {!players.length && <h1>Список игроков пуст</h1>}
+        {!players.length && <Notification children='Список игроков пуст!'/>}
         {players.map((player, i) => (
           <ListPlayersItems key={player.id}>
             <Title as="span" size={18}>
