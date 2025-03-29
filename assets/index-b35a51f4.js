@@ -192,7 +192,7 @@ Please change the parent <Route path="${p}"> to <Route path="${p==="/"?"*":`${p}
     justify-content: space-between;
     align-items: center;
     padding: 15px 15px 15px 30px;
-`,JP=()=>{const e=Uy(r=>r.addPlayer.players),t=If();return Q.jsx(Q.Fragment,{children:Q.jsxs(XP,{children:[!e.length&&Q.jsx(Qi,{children:"Список игроков пуст!"}),e.map((r,n)=>Q.jsxs(qP,{children:[Q.jsx(Ki,{as:"span",size:18,children:++n}),Q.jsx(Ki,{as:"h4",size:20,children:r.name}),Q.jsx(Ki,{as:"h4",size:20,children:r.scores}),Q.jsx(go,{onClick:()=>t(ck(r)),activetab:"true",width:40,height:40,children:"X"})]},r.id))]})})},ZP=()=>Q.jsx(JP,{}),eC=dE([{path:"/",element:Q.jsx(yx,{}),children:[{index:!0,element:Q.jsx(ZP,{})},{path:"game-page",element:Q.jsx(GP,{})},{path:"add-player",element:Q.jsx(Qx,{})}]}]),tC=px`
+`,JP=()=>{const e=Uy(r=>r.addPlayer.players),t=If();return Q.jsx(Q.Fragment,{children:Q.jsxs(XP,{children:[!e.length&&Q.jsx(Qi,{children:"Список игроков пуст!"}),e.map((r,n)=>Q.jsxs(qP,{children:[Q.jsx(Ki,{as:"span",size:18,children:++n}),Q.jsx(Ki,{as:"h4",size:20,children:r.name}),Q.jsx(Ki,{as:"h4",size:20,children:r.scores}),Q.jsx(go,{onClick:()=>t(ck(r)),activetab:"true",width:40,height:40,children:"X"})]},r.id))]})})},ZP=()=>Q.jsx(JP,{}),eC=dE([{path:"/",element:Q.jsx(yx,{}),children:[{index:!0,element:Q.jsx(ZP,{})},{path:"/game-page",element:Q.jsx(GP,{})},{path:"/add-player",element:Q.jsx(Qx,{})}]}]),tC=px`
    *,
     *::before,
     *::after {
