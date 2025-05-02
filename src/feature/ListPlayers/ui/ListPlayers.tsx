@@ -1,12 +1,10 @@
 import { RootState } from '#app/store/store.ts';
-import { removePlayerList } from '#featers/AddPlayer/store/AddPlayer.ts';
+import { removePlayerList } from '#feature/AddPlayer/store/AddPlayer.ts';
 import { useAppDispatch, useAppSelector } from '#shared/hooks/redux-hook/ReduxHook.ts';
-import { Button } from '#shared/index.ts';
-import { ListPlayersContainer, ListPlayersItems } from '#shared/ui/StyledListPlayer/StyledLIstPlayer.tsx';
-import { Notification } from '#shared/ui/StyledNotification/StyledNotification.tsx';
+import { Notification } from '#shared/ui/Notification/StyledNotification.tsx';
 import { Title } from '#shared/ui/Title/Title.tsx';
-
-
+import { RiDeleteBin7Fill } from "react-icons/ri";
+import { ListPlayersContainer, ListPlayersItems } from './StyledLIstPlayer';
 export const ListPlayers = () => {
   const players = useAppSelector((state: RootState) => state.addPlayer.players);
   const dispatch = useAppDispatch();
@@ -16,18 +14,13 @@ export const ListPlayers = () => {
         {!players.length && <Notification children='Список игроков пуст!'/>}
         {players.map((player, i) => (
           <ListPlayersItems key={player.id}>
-            <Title as="span" size={18}>
-              {++i}
+            <Title as="h4" size={16}>
+              {++i}.{player.name}
             </Title>
-            <Title as="h4" size={20}>
-              {player.name}
-            </Title>
-            <Title as="h4" size={20}>
+            <Title as="h4" size={16}>
               {player.scores}
             </Title>
-            <Button onClick={() => dispatch(removePlayerList(player))} activetab="true" width={40} height={40}>
-              X
-            </Button>
+            <RiDeleteBin7Fill cursor="pointer" color="#ff5757" width={25} height={25} onClick={() => dispatch(removePlayerList(player))}/>
           </ListPlayersItems>
         ))}
       </ListPlayersContainer>

@@ -1,9 +1,11 @@
-import { ListPlayers } from "../../featers/ListPlayers";
+import { ListPlayers } from "#feature/ListPlayers/index.ts";
 
 
-export const HomePage = () => {
+const HomePage = () => {
     return (
         <ListPlayers/>
     );
 };
+
+export default HomePage
 

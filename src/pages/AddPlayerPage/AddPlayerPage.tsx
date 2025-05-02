@@ -1,8 +1,8 @@
-import { AddPlayer } from "../../featers/AddPlayer";
+import { AddPlayer } from "#feature/AddPlayer/index.ts";
 
-export const AddPlayerPage = () => {
+const AddPlayerPage = () => {
     return (
         <AddPlayer/>
     );
 };
-
+export default AddPlayerPage

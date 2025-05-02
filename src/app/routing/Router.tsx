@@ -1,7 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AddPlayerPage, GamePage, HomePage } from "../../pages";
+// import { lazy } from "react";
 import { MainLayoute } from "../../shared";
+import { lazy } from "react";
+// import HomePage from "#pages/HomePage/HomePage.tsx";
+// import GamePage from "#pages/GamePage/GamePage.tsx";
+// import AddPlayerPage from "#pages/AddPlayerPage/AddPlayerPage.tsx";
 
+const HomePage = lazy(() => import('../../pages/HomePage'))
+const GamePage = lazy(() => import('../../pages/GamePage'))
+const AddPlayerPage = lazy(() => import('../../pages/AddPlayerPage'))
 
 export const router = createBrowserRouter([
     {
@@ -23,7 +30,7 @@ export const router = createBrowserRouter([
       ]
     }],
     {
-      basename: '/'
+      basename: `${process.env.NODE_ENV === 'production' ? '/thousand_app_v3' : '/'}`
     }
   )
 

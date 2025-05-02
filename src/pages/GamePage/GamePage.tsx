@@ -1,8 +1,9 @@
-import { PlayerField } from "../../featers/PlayerField";
+import { PlayerField } from "#feature/PlayerField/ui/PlayerField.tsx";
 
-export const GamePage = () => {
+
+const GamePage = () => {
     return (
         <PlayerField/>
     );
 };
-
+export default GamePage

@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const AddPlayerContainer = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     height: calc(100vh - 390px);
-    width: 100%;
+    width: 80%;
 `
 export const AddPlayerForm = styled.form`
     display: flex;

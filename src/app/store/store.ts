@@ -1,11 +1,11 @@
+import AddPlayer from "../../feature/AddPlayer/store/AddPlayer"
 import { configureStore } from "@reduxjs/toolkit";
-import addPlayer from "../../featers/AddPlayer/store/AddPlayer";
 
 
 
 export const store = configureStore({
     reducer: {
-        addPlayer: addPlayer
+        addPlayer: AddPlayer
     }
 })
 
